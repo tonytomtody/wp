@@ -1,0 +1,20 @@
+<html>
+    <body>
+        <button onclick="big()">Button1</button>
+        <script>
+            function big(){
+                width1 += 10
+                height1 += 10
+                b.style = `position:${position1} ; top:${top1} ; left:${left1};width:${width1};height:${height1}`
+            }
+
+            let top1 = 100
+            let left1 = 100
+            let position1 = 'absolute'
+            let width1 = 100
+            let height1 = 50
+            let b = document.querySelector('Button')
+            b.style = `position:${position1} ; top:${top1} ; left:${left1};width:${width1};height:${height1}`
+        </script>
+    </body>
+</html>
