@@ -1,35 +1,12 @@
 <html>
-    <body onload="shift()">
-        <button onclick="big()">Button1</button>
+    <body>
+        <button onclick="shift()">Button1</button>
         <script>
             function shift(){
-                if (left1 >= (limitWidth - (width1 / 2)) | left1 <= (width1 / 2)) {
-                    distance1 = distance1 * -1
-                    distancechange1 = distancechange1 * -1
-                }
-                if (top1 >= (limitHeight - (height1 / 2)) | top1 <= (height1 / 2)) {
-                    distance2 = distance2 * -1
-                    distancechange2 = distancechange2 * -1
-                }
-                left1 += distance1
-                top1 += distance2
-                b.style = `position:${position1} ; top:${top1} ; left:${left1};width:${width1};height:${height1}`
-                setTimeout(shift,20);
-            }
-            function big(){
-                width1 += 5
-                height1 += 5
-                distance1 += distancechange1
-                distance2 += distancechange2
+                left1 += 10
                 b.style = `position:${position1} ; top:${top1} ; left:${left1};width:${width1};height:${height1}`
             }
 
-            let limitHeight = window.screen.availHeight
-            let limitWidth = window.screen.availWidth
-            let distancechange1 = 5
-            let distancechange2 = 5
-            let distance1 = 5
-            let distance2 = 5
             let top1 = 100
             let left1 = 100
             let position1 = 'absolute'
