@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            div{
+                width: 50px;
+                height:100vh;
+                background : lightskyblue;
+                box-shadow: 10px 10px lightsalmon;
+            }
+            .slidesubtext{
+                margin: 10;
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 style="text-align: center;">我的網站</h1>
+        <div id="slide" style="margin: 0px;padding: 0px;">
+            <p1 id= "slidetext" style="margin: 10px;" onclick="trans()">></p1>
+            <hr>
+            <p1 class="slidesubtext">關於我</p1>
+            <br>
+            <p1 class="slidesubtext">Youtube我的頻道</p1>
+        </div>
+        <script>
+            let slidecon = true;
+            var plist = document.querySelectorAll("slidesubtest");
+            var parray = [...plist];
+            function trans () {
+                if (slidecon){
+                    document.getElementById("slide").animate(
+                    [
+                        {width:50},
+                        {width:300}
+                    ],
+                    
+                        500,
+                    
+                )
+                setTimeout(function(){document.getElementById("slidetext").innerHTML = "< 選單";},450);
+                document.getElementById("slide").style = "width:300px";
+                slidecon = false;
+                parray.forEach(p1 => {p1.style.display = "block"});
+                }
+                else {
+                    document.getElementById("slide").animate(
+                    [
+                        {width:300},
+                        {width:50}
+                    ],
+                    
+                        500,
+                    
+                )
+                document.getElementById("slide").style = "width:50px";
+                setTimeout(function(){document.getElementById("slidetext").innerHTML = ">";},450);
+                slidecon = true;
+                }
+                
+            };
+        </script>
+    </body>
+</html>
