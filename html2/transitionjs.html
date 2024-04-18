@@ -8,10 +8,6 @@
                 background : lightskyblue;
                 box-shadow: 10px 10px lightsalmon;
             }
-            .slidesubtext{
-                margin: 10;
-                display: none;
-            }
         </style>
     </head>
     <body>
@@ -19,14 +15,12 @@
         <div id="slide" style="margin: 0px;padding: 0px;">
             <p1 id= "slidetext" style="margin: 10px;" onclick="trans()">></p1>
             <hr>
-            <p1 class="slidesubtext">關於我</p1>
+            <a href="aboutme.html" id="sts1" style="margin: 10; display: none;">關於我</a>
             <br>
-            <p1 class="slidesubtext">Youtube我的頻道</p1>
+            <a href="https://www.youtube.com/@tonytomtody" id="sts2"style="margin: 10;display: none;">Youtube我的頻道</a>
         </div>
         <script>
             let slidecon = true;
-            var plist = document.querySelectorAll("slidesubtest");
-            var parray = [...plist];
             function trans () {
                 if (slidecon){
                     document.getElementById("slide").animate(
@@ -38,10 +32,12 @@
                         500,
                     
                 )
-                setTimeout(function(){document.getElementById("slidetext").innerHTML = "< 選單";},450);
+                setTimeout(function(){document.getElementById("slidetext").innerHTML = "< 選單";
+                    document.getElementById("sts1").style.display="block";
+                    document.getElementById("sts2").style.display="block";
+                },450);
                 document.getElementById("slide").style = "width:300px";
                 slidecon = false;
-                parray.forEach(p1 => {p1.style.display = "block"});
                 }
                 else {
                     document.getElementById("slide").animate(
@@ -55,6 +51,8 @@
                 )
                 document.getElementById("slide").style = "width:50px";
                 setTimeout(function(){document.getElementById("slidetext").innerHTML = ">";},450);
+                document.getElementById("sts1").style.display="none";
+                document.getElementById("sts2").style.display="none";
                 slidecon = true;
                 }
                 
