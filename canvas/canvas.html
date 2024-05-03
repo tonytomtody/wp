@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <div style="display: inline-block;">
+            <h1>Circle</h1>
+            <canvas id="mycanvas" width="500" height="500"></canvas>
+            <input type="number" id="num" max="500" min="1">
+            <button onclick="draw()">Draw</button>
+        </div>
+        <div style="display: inline-block;">
+            <h1>Rectangle</h1>
+            <canvas id="mycanvas2"  width="500" height="500"></canvas>
+        </div>
+    </body>
+    <script>
+        let x = 0;
+        let y = 0;
+        const canvas = document.getElementById("mycanvas");
+        const ctx = canvas.getContext("2d");
+        ctx.beginPath();
+        for (let i = 0 ; i < 200 ; i++){
+            ctx.arc(250, 250, 200, x, x + 2 * Math.PI);
+            x += 0.5;
+            ctx.arc(250, 250, 150, x,x + 2 * Math.PI);
+            x += 0.5;
+        }
+        ctx.stroke();
+        const canvas2 = document.getElementById("mycanvas2");
+        const ctx2 = canvas2.getContext("2d");
+        for ( let i = 0 ; i < 100 ; i++){
+            ctx2.rect(250,250, 500 - y,500 - y);
+            y += 10;
+        }
+        y = 0;
+        for ( let i = 0 ; i < 10 ; i++){
+            ctx2.rect(250,0, 500 - y,500 - y);
+            y += 50;
+        }
+        y = 0;
+        for ( let i = 0 ; i < 10 ; i++){
+            ctx2.rect(0,250, 500 - y,500 - y);
+            y += 50;
+        }
+        ctx2.stroke();
+        function draw(){
+            ctx.clearRect(0, 0, 500, 500);
+            x = 0;
+            let num = document.getElementById("num").value;
+            ctx.beginPath();
+            for (let i = 0 ; i < num ; i++){
+                ctx.arc(250, 250, 200, x, x + 2 * Math.PI);
+                x += 0.5;
+                ctx.arc(250, 250, 150, x,x + 2 * Math.PI);
+                x += 0.5;
+            }
+            ctx.stroke();
+        }
+    </script>
+</html>
