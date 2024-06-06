@@ -5,13 +5,12 @@
             .grid-container{
                 display:grid;
                 grid-template-columns: 300px auto 100px;
-                grid-template-rows: auto 500px 500px 100px;
-                background-color: lightseagreen;
+                grid-template-rows: 75px 500px 500px 100px;
                 gap:10px;
                 padding:10px;
+                font-family: 微軟正黑體;
             }
             .grid-container > div{
-                background-color: lightgreen;
                 padding:20px 0;
                 font-size:30px;
             }
@@ -32,11 +31,16 @@
     </head>
     <body>
         <div class="grid-container">
-            <div class="item1">
-                <button style="width: 40px; height: 40px; text-align: left; margin: 10px;">Home</button>
+            <div class="item1" style="background: black;">
+                <a href="cssgrid.html"><p1 style="color: white;">Home</p1></a>
+                <a href="https://www.youtube.com/channel/UCinnQkhZPMD8tOn_wzwaPMQ"><p1 style="color: white;">Youtube</p1></a>
             </div>
-            <div class="item2" style="text-align: center;">這是個側邊欄</div>
-            <div class="item3" style="text-align: center;">內容</div>
+            <div class="item2" style="text-align: center; background: gray; color: white; font-size: 20px;">
+                <p1>生平</p1><hr>
+                <p2>國立台南第二高級中學</p2><br>
+                <p2>國立金門大學 資訊工程學系</p2><br>
+            </div>
+            <div class="item3" style="text-align: center; border: 10px solid lightgray;">內容</div>
             <div class="item4" style="text-align: center;">歡迎廣告進駐</div>
             <div class="item5" style="text-align: center;">內容</div>
             <div class="item6" style="text-align: center;">歡迎廣告進駐</div>
