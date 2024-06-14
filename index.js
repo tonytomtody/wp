@@ -5,6 +5,7 @@ let grid = document.querySelector('.grid-container')
             let pos = 50
             window.onload = function(){
                 grid.style.gridTemplateColumns = `50px auto ${screenx * 0.1}px`
+                shift()
             }
             function slideopen(){
                 let open = document.getElementById('open')
@@ -38,4 +39,29 @@ let grid = document.querySelector('.grid-container')
                     open.innerHTML = '>'
                     slidecheck = true
                 }
+            }
+            let posx = 0
+            let posy = 0
+            let changex = 10
+            let changey = 10
+            function shift(){
+                let posi = document.getElementById('movetext')
+                let limitheight = screenx - pos - (screenx * 0.1) - 150
+                let limitwidth = 425
+                if (posx >= limitheight){
+                    changex = -10
+                }
+                else if (posx <= 0){
+                    changex = 10
+                }
+                if (posy >= limitwidth){
+                    changey = -10
+                }
+                else if (posy <= -10){
+                    changey = 10
+                }
+                posx += changex
+                posy += changey
+                posi.style = `position: relative ; top:${posy}px ; left:${posx}px`
+                setTimeout(shift,20)
             }
